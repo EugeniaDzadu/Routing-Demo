@@ -1,21 +1,21 @@
-const { metadata } = require("../../about/page");
+import { Metadata } from "next";
+import { setTimeout } from "timers/promises";
 
-metadata
-
-
-const generateMetadata = ({ params }) => {
+const generateMetadata = async ({ params }) => {
+  const title = await new Promise(resolve => {
+    setTimeout(() => {
+      resolve(`iPhone ${params.productId}`);
+    }, 100);
+  });
   return {
-    title: `Product ${params.productId}`
+    title: `Product ${title}`
   };
 };
 
 const ProductDetails = ({ params }) => {
-  return <h1>Details about the product {params.productId}</h1>;
+  return (
+    <h1>Details about the product {params.productId}</h1>
+  );
 };
 
-module.exports = {
-  generateMetadata,
-  ProductDetails
-};
-
-
+export { generateMetadata, ProductDetails };
