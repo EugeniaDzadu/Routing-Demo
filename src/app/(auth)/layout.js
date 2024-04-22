@@ -1,8 +1,11 @@
-// @ts-nocheck
+'use client'
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// @ts-ignore
-// @use-environment client
+import "./styles.css";
+import { useState } from "react";
+
+
 
 const navLinks = [
   { name: "Register", href: "/register" },
@@ -12,8 +15,13 @@ const navLinks = [
 
 const AuthLayout = ({ children }) => {
   const pathname = usePathname();
+  const[input, setInput] = useState("")
   return (
     <>
+      <div>
+        <input value={input} onChange={e =>setInput(e.target.value)}/>
+      </div>
+
       <div>
         {navLinks.map((link) => {
           const isActive = pathname.startsWith(link.href);
