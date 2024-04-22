@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+
+export const metadata = {
+    title: {
+        absolute: "Profile",
+    }
+}
+
 const Profile = ()=>{
     return(
         // <h1>My profile page</h1>
