@@ -1,7 +1,10 @@
+import Card from "../../../components/card";
+
+
 const  UserAnalytics = ()=>{
     return(
         <>
-         <h1>User Analytics</h1>
+         <Card>User Analytics</Card>
         </>
     )
 

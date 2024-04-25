@@ -1,23 +1,24 @@
-import UserAnalytics from "@/components/Analytics"
-import RevenueMetrics from "@components/RevenueMetrics"
-import Notifications from "@components/Notifications"
+import Notifications from "./@notifications/page"
+import Revenue from "./@revenue/page"
+import UserAnalytics from "./@users/page"
 
 
 
 
-const DashboardLayout = ()=>{
-   return(
-    <>
-       <div>{children}</div>
+const DashboardLayout = (children, users, revenue, notifications) => {
+    return (
+        <>
+            <div>{children}</div>
+        <div style={{display: "flex"}}>
+            <div style={{display: "flex", flexDirection: "column"}}>
+                <div>{users}</div>
+                <div>{revenue}</div>
+            </div>
 
-       <UserAnalytics/>
-
-       <RevenueMetrics/>
-       
-       <Notifications/>
-
-    </>
-   )
+            <div style={{display: "flex", flex: 1}}>{notifications}</div>
+        </div>
+        </>
+    );
 }
 
 export default DashboardLayout;

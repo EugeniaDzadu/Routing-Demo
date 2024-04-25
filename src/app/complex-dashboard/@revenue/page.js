@@ -1,7 +1,10 @@
+import Card from "../../../components/card";
+
+
 const  Revenue = ()=>{
     return(
         <>
-         <h1>Revenue</h1>
+         <Card>Revenue</Card>
         </>
     )
 
